@@ -1,14 +1,17 @@
 <template>
     <div v-for="task in tasks" :key="task.id">
-    <h3>{{task.text}}</h3>
+    <TaskComponent :task="task" />
     </div>
 </template>
 
 <script>
+import TaskComponent from './TaskComponent.vue';
+
 export default {
     name: "TasksComponent",
     props: {
         tasks: Array,
-    }
+    },
+    components: { TaskComponent }
 }
 </script>
