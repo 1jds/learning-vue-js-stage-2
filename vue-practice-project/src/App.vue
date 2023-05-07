@@ -1,18 +1,48 @@
 <template>
-    <div class="container">
-      <HeaderComponent title="Task Tracker" />
-    </div>
+  <div class="container">
+    <HeaderComponent title="Task Tracker" />
+    <TasksComponent :tasks="tasks" />
+  </div>
 </template>
 
 <script>
-  import HeaderComponent from './components/HeaderComponent.vue'
-  
-  export default {
-    name: 'App',
-    components: {
-      HeaderComponent
-    },
-  }  
+import HeaderComponent from './components/HeaderComponent.vue'
+import TasksComponent from './components/TasksComponent.vue';
+
+export default {
+  name: 'App',
+  components: {
+    HeaderComponent,
+    TasksComponent
+  },
+  data() {
+    return {
+      tasks: []
+    }
+  },
+  created() {
+    this.tasks = [
+      {
+        id: 1,
+        text: "Doctor's appointment",
+        day: "March 1st at 2:30pm",
+        reminder: true,
+      },
+      {
+        id: 2,
+        text: "Meeting at School",
+        day: "March 3rd at 1:30pm",
+        reminder: true,
+      },
+      {
+        id: 3,
+        text: "Food shopping",
+        day: "March 3rd at 11:00am",
+        reminder: false,
+      }
+    ]
+  }
+}  
 </script>
 
 <style>
@@ -63,4 +93,5 @@ body {
 .btn-block {
   display: block;
   width: 100%;
-}</style>
+}
+</style>

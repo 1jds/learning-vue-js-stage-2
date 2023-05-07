@@ -1,8 +1,8 @@
 <template>
-    <header>
-        <h1>{{ title }}</h1>
-        <ButtonComponent text="Add Task" color="green" />
-    </header>
+  <header>
+    <h1>{{ title }}</h1>
+    <ButtonComponent text="Add Task" color="green" />
+  </header>
 </template>
 
 <script>
@@ -15,7 +15,7 @@ export default {
   },
   components: {
     ButtonComponent,
-}
+  }
 
 }
 </script>
