@@ -1,13 +1,3 @@
-<template>
-  <div class="container">
-    <HeaderComponent @toggle-add-task="toggleAddTask" title="Task Tracker" />
-    <div v-if="showAddTask">
-      <AddTask @add-task="addTask" />
-    </div>
-    <TasksComponent @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
-  </div>
-</template>
-
 <script>
 import AddTask from './components/AddTask.vue';
 import HeaderComponent from './components/HeaderComponent.vue'
@@ -66,6 +56,17 @@ export default {
   }
 }  
 </script>
+
+<template>
+  <div class="container">
+    <HeaderComponent @toggle-add-task="toggleAddTask" title="Task Tracker" :showAddTask="showAddTask" />
+    <div v-if="showAddTask">
+      <AddTask @add-task="addTask" />
+    </div>
+    <TasksComponent @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
+  </div>
+</template>
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
