@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-    <HeaderComponent title="Task Tracker" />
-    <AddTask @add-task="addTask" />
+    <HeaderComponent @toggle-add-task="toggleAddTask" title="Task Tracker" />
+    <div v-if="showAddTask">
+      <AddTask @add-task="addTask" />
+    </div>
     <TasksComponent @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
   </div>
 </template>
@@ -17,13 +19,17 @@ export default {
     HeaderComponent,
     TasksComponent,
     AddTask
-},
+  },
   data() {
     return {
-      tasks: []
+      tasks: [],
+      showAddTask: false,
     }
   },
   methods: {
+    toggleAddTask() {
+      this.showAddTask = !this.showAddTask
+    },
     addTask(task) {
       this.tasks = [...this.tasks, task]
     },
@@ -33,7 +39,7 @@ export default {
       }
     },
     toggleReminder(id) {
-      this.tasks = this.tasks.map((task) => task.id === id ? {...task, reminder: !task.reminder} : task)
+      this.tasks = this.tasks.map((task) => task.id === id ? { ...task, reminder: !task.reminder } : task)
     },
   },
   created() {

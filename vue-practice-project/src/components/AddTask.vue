@@ -45,8 +45,8 @@ export default {
 
             this.$emit('add-task', newTask)
             this.text = '';
-                this.day = '';
-                this.reminder = false;
+            this.day = '';
+            this.reminder = false;
         }
     },
 }
@@ -84,7 +84,8 @@ export default {
 }
 
 .form-control-check input {
-    flex: 2;
+    flex: unset;
     height: 20px;
+    width: 20px;
 }
 </style>
