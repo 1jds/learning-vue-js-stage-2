@@ -1,5 +1,6 @@
 <script>
 import AddTask from './components/AddTask.vue';
+import FooterComponent from './components/FooterComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue'
 import TasksComponent from './components/TasksComponent.vue';
 
@@ -8,8 +9,9 @@ export default {
   components: {
     HeaderComponent,
     TasksComponent,
-    AddTask
-},
+    AddTask,
+    FooterComponent
+  },
   data() {
     return {
       tasks: [],
@@ -81,6 +83,7 @@ export default {
       <AddTask @add-task="addTask" />
     </div>
     <TasksComponent @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
+    <FooterComponent />
   </div>
 </template>
 
