@@ -9,7 +9,7 @@ export default {
     HeaderComponent,
     TasksComponent,
     AddTask
-  },
+},
   data() {
     return {
       tasks: [],
