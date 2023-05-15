@@ -1,12 +1,14 @@
 <script>
 import FooterComponent from './components/FooterComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue'
+import JsxTestComponent from './components/JsxTestComponent.vue'
 
 export default {
   name: 'App',
   components: {
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    JsxTestComponent
   },
   data() {
     return {
@@ -26,6 +28,7 @@ export default {
     <HeaderComponent @toggle-add-task="toggleAddTask" title="Task Tracker" :showAddTask="showAddTask" />
     <router-view :showAddTask="showAddTask"></router-view>
     <FooterComponent />
+    <JsxTestComponent color="red" />
   </div>
 </template>
 
