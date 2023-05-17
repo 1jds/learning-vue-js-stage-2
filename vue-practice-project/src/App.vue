@@ -13,6 +13,7 @@ export default {
   data() {
     return {
       showAddTask: false,
+      practiceDataString: "Hello, JSXZ"
     }
   },
   methods: {
@@ -28,7 +29,7 @@ export default {
     <HeaderComponent @toggle-add-task="toggleAddTask" title="Task Tracker" :showAddTask="showAddTask" />
     <router-view :showAddTask="showAddTask"></router-view>
     <FooterComponent />
-    <JsxTestComponent color="red" />
+    <JsxTestComponent color="red" :practiceDataString="practiceDataString" />
   </div>
 </template>
 

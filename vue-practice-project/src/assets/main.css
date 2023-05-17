@@ -1,1 +1,10 @@
+.mega {
+    background-color: violet;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+}
 
+.boohoo {
+    background-color: bisque;
+    padding: 1rem 1.5rem;
+}
